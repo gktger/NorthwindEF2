@@ -33,7 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,14 +53,44 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonelEkle_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonelEkle_Form.Designer.cs">
+      <DependentUpon>PersonelEkle_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonelGuncelle_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonelGuncelle_Form.Designer.cs">
+      <DependentUpon>PersonelGuncelle_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonelListesi_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonelListesi_Form.Designer.cs">
+      <DependentUpon>PersonelListesi_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonelEkle_Form.resx">
+      <DependentUpon>PersonelEkle_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonelGuncelle_Form.resx">
+      <DependentUpon>PersonelGuncelle_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonelListesi_Form.resx">
+      <DependentUpon>PersonelListesi_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -63,6 +100,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -75,6 +113,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NorthWindEF.BLL\NorthWindEF.BLL.csproj">
+      <Project>{f80d0007-a8b5-4152-b70a-de967bcd58ca}</Project>
+      <Name>NorthWindEF.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NorthWindEF.DAL\NorthWindEF.DAL.csproj">
+      <Project>{a9db4e75-1d21-44f6-aec6-ab45c5eab49c}</Project>
+      <Name>NorthWindEF.DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
