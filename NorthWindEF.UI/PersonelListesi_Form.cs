@@ -28,14 +28,14 @@ namespace NorthWindEF.UI
         {
             PersonelBLL.DeleteEmployee((int)dgw_PersonelListesi.SelectedRows[0].Cells[0].Value);
             dgw_PersonelListesi.DataSource = PersonelBLL.GetEmployees();
-
+            MessageBox.Show("Personel Silindi!");
         }
 
         private void kaydıGüncelleToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PersonelGuncelle_Form frm = new PersonelGuncelle_Form();
             frm.employeeId = (int)this.dgw_PersonelListesi.SelectedRows[0].Cells[0].Value;
-            ShowDialog();
+            frm.Show();
         }
     }
 }

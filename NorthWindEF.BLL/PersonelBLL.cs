@@ -37,7 +37,7 @@ namespace NorthWindEF.BLL
 
         public static object GetEmployeeTitles()
         {
-            return dataContext.Employees.Select(x => new { x.Title }).ToList();
+            return dataContext.Employees.Select(x => new { x.Title }).Distinct().ToList();
         }
 
         public static void DeleteEmployee(int employeeId)
@@ -48,10 +48,12 @@ namespace NorthWindEF.BLL
 
         }
 
-        public static void UpdateEmployee(string name, string lastname)
+        public static void UpdateEmployee(int id,string name, string lastname)
         {
 
-            dataContext.Employees.First(e => e.FirstName == name & e.LastName == lastname);
+           var emplpyee= dataContext.Employees.First(e =>e.EmployeeID==id);
+            emplpyee.FirstName = name;
+            emplpyee.LastName = lastname;
             dataContext.SaveChanges();
 
 

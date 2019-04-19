@@ -20,6 +20,7 @@ namespace NorthWindEF.UI
 
         private void btn_Kaydet_Click(object sender, EventArgs e)
         {
+            
             int _personelId = PersonelBLL.AddEmployee(tb_isim.Text, tb_soyisim.Text,(string)cb_title.SelectedValue);
             MessageBox.Show("Yeni Kayıt Eklendi!");
            
@@ -32,7 +33,7 @@ namespace NorthWindEF.UI
             cb_title.DataSource = PersonelBLL.GetEmployeeTitles();
             cb_title.DisplayMember = "Title";
             cb_title.ValueMember = "Title";
-            
+
         }
     }
 }

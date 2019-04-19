@@ -54,6 +54,7 @@
             this.btn_Guncelle.TabIndex = 9;
             this.btn_Guncelle.Text = "Kaydet";
             this.btn_Guncelle.UseVisualStyleBackColor = true;
+            this.btn_Guncelle.Click += new System.EventHandler(this.btn_Guncelle_Click);
             // 
             // tb_soyisimguncelle
             // 
